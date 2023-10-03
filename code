@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Math Solver</title>
+    <style>
+        body {
+            background-color: #666666; /* Grey background color */
+            color: #ffffff; /* White text color */
+            font-family: Arial, sans-serif; /* Specify a font family */
+        }
+        header, main {
+            padding: 20px;
+        }
+        input[type="text"], button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Math Solver</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Enter Your Math Expression</h2>
+            <input type="text" id="mathInput" placeholder="Enter your math expression">
+            <button id="solveButton">Solve</button>
+        </section>
+        
+        <section>
+            <h2>Result</h2>
+            <p id="result">The result will be displayed here.</p>
+        </section>
+        
+        <section>
+            <h2>About This Website</h2>
+            <p>This is a simple math solver website that allows you to enter mathematical expressions and get the results instantly. Whether you need to perform basic arithmetic calculations or more complex mathematical operations, this tool can help you quickly find the answers you're looking for.</p>
+        </section>
+    </main>
+    
+    <script>
+        // JavaScript code for solving math expressions
+        document.getElementById("solveButton").addEventListener("click", function() {
+            try {
+                const mathExpression = document.getElementById("mathInput").value;
+                const result = eval(mathExpression); // This is a basic way to evaluate the expression (not recommended for production)
+                document.getElementById("result").textContent = `Result: ${result}`;
+            } catch (error) {
+                document.getElementById("result").textContent = "Error: Invalid input";
+            }
+        });
+    </script>
+</body>
+</html>
